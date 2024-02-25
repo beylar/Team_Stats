@@ -18,4 +18,49 @@ team._games.push(
   { opponent: 'Warriors', teamPoints: 120, opponentPoints: 115 }
 );
 
-console.log(team);
+//console.log(team);
+
+//players to retrieve the _players property.
+team.players = function () {
+    return this._players;
+  };
+  
+//games to retrieve the _games property.
+team.games = function () {
+    return this._games;
+  };
+  
+  console.log(team);
+  
+  team.addPlayer = function (newFirstName, newLastName, newAge) {
+    const newPlayer = {
+      firstName: newFirstName,
+      lastName: newLastName,
+      age: newAge
+    };
+    //add newPlayer object to the _players property
+    this._players.push(newPlayer);
+  };
+
+  //calling the addPlayer function
+  team.addPlayer('Bugs', 'Bunny', 76);
+  console.log(team.players());
+  
+  
+  team.addGame = function (newOpponent, newTeamPoints, newOpponentPoints) {
+    const newGame = {
+      opponent: newOpponent,
+      teamPoints: newTeamPoints,
+      opponentPoints: newOpponentPoints
+    };
+    //add newGame object to the _games property
+    this._games.push(newGame);
+  };
+  
+  //calling the addGame function
+  team.addGame('Titans', 100, 98);
+  console.log(team.games());
+
+
+  
+  
